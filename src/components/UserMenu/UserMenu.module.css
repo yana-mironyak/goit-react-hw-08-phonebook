@@ -26,3 +26,8 @@
     text-transform: uppercase;
     color: white;
 }    
+
+.logout__btn:hover {
+    cursor: pointer;
+    scale: 1.1;
+}

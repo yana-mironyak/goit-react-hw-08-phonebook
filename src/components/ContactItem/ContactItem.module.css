@@ -10,6 +10,10 @@
     font-weight: 700;
     transition: background-color 100ms;
 }
+
+.deleteButton:hover {
+    color: white;
+}
     
 .deleteButton:active {
     background-color: rgb(153, 153, 211);
