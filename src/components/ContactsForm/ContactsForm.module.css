@@ -16,12 +16,14 @@
 }
 
 .contactInput:focus {
+    border: transparent;
     outline: solid #00d4ff;
 }
 
 .contactButton {
     display: block;
     margin-left: 15px;
+    height: 24px;
     border-radius: 5px;
     border-color: rgb(233, 227, 227);
     background-color: #00d4ff;
@@ -35,6 +37,7 @@
 }
 
 .contactError {
+    width: 170px;
     font-size: 15px;
     color: red;
     font-style: italic;
