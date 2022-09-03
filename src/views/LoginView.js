@@ -26,7 +26,6 @@ const LoginView = () => {
         dispatch(authOperations.logIn({ email, password }));
         setEmail('');
         setPassword('');
-        reset();
     }; 
 
     const emailValidation = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
@@ -41,7 +40,6 @@ const LoginView = () => {
                     className={css.form__field}
                     size="small"
                     variant="standard"
-                    type='email'
                     label='Email'
                     error={!!errors?.email}
                     helperText={errors?.email ? errors?.email?.message : null}
@@ -53,8 +51,8 @@ const LoginView = () => {
                     size="small"
                     label="Password"
                     variant="standard"
-                    error={!!errors?.email}
-                    helperText={errors?.email ? errors?.email?.message : null}
+                    error={!!errors?.Password}
+                    helperText={errors?.Password ? errors?.Password?.message : null}
                     {...register("password", { required: 'This is required', minLength: { value: 4, message: 'Min length is 4' } })}
                     type='password'
                     placeholder="Password" onChange={handleChange} />
