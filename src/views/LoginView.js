@@ -9,7 +9,7 @@ const LoginView = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleChange = ({ target: { name, value } }) => {
         switch (name) {
@@ -53,7 +53,7 @@ const LoginView = () => {
                     variant="standard"
                     error={!!errors?.Password}
                     helperText={errors?.Password ? errors?.Password?.message : null}
-                    {...register("password", { required: 'This is required', minLength: { value: 4, message: 'Min length is 4' } })}
+                    {...register("password", { required: 'This is required', minLength: { value: 7, message: 'Min length is 7' } })}
                     type='password'
                     placeholder="Password" onChange={handleChange} />
                 <Button

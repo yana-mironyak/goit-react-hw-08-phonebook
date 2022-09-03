@@ -1,5 +1,4 @@
 import React from 'react';
-import css from './App.module.css';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -8,9 +7,11 @@ import SharedLayout from './SharedLayout/SharedLayout';
 import authOperations from '../redux/auth/authOperations'; 
 import PrivateRoute from './UserMenu/PrivateRoute';
 import PublicRoute from './UserMenu/PublicRoute';
+import NotFound from './NotFound/NotFound';
 const RegisterView = lazy(() => import('../views/RegisterView'));
 const LoginView = lazy(() => import('views/LoginView'));
 const ContactsView = lazy(() => import('views/ContactsView'));
+// const NotFound = lazy(() => import('./NotFound/NotFound'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route className={css.container} path='/' element={<SharedLayout />}>
+      <Route path='/' element={<SharedLayout />}>
         <Route index element={
           <PrivateRoute path='login' >
             <ContactsView />
@@ -38,6 +39,7 @@ const App = () => {
           </PublicRoute>
          } />
       </Route>
+      <Route path='*' element={<NotFound />} />
     </Routes>
   )
 }

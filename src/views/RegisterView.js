@@ -48,15 +48,14 @@ const RegisterView = () => {
                     variant="standard"
                     label='Name'
                     error={!!errors?.name}
-                    helperText={errors?.name ? errors?.namr?.message : null}
-                    {...register("name", { required: 'This is required' })}
+                    helperText={errors?.name ? errors?.name?.message : null}
+                    {...register("name", { required: 'This is required', message: 'Name is too short' })}
                     // placeholder="Name"
                     onChange={handleChange} />
                 <TextField
                     className={css.form__field}
                     size="small"
                     variant="standard"
-                    type='email'
                     label='Email'
                     error={!!errors?.email}
                     helperText={errors?.email ? errors?.email?.message : null}
@@ -69,8 +68,8 @@ const RegisterView = () => {
                     label="Password"
                     variant="standard"
                     error={!!errors?.password}
-                    helperText={errors?.email ? errors?.password?.message : null}
-                    {...register("password", { required: 'This is required', minLength: { value: 4, message: 'Min length is 4' } })}
+                    helperText={errors?.password ? errors?.password?.message : null}
+                    {...register("password", { required: 'This is required', minLength: { value: 7, message: 'Min length is 7' } })}
                     type='password'
                     // placeholder="Password"
                     onChange={handleChange} />

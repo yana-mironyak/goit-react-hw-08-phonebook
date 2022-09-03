@@ -17,13 +17,14 @@ const ContactsForm = () => {
     const handleSubmit = async ({ name, number }, { resetForm }) => {
         try {
             const contactsMatch = data.find(contact => contact.name.toLowerCase() === name.toLowerCase());
-            console.log(contactsMatch)
             if (contactsMatch) {
                 alert(`${name} is already in contacts`);
-            } else {
+            } 
+            else {
                 await addContact({ name, number });
+                resetForm();
             }
-            resetForm();
+            
         } catch (error) { alert('Error') }   
     }
     
