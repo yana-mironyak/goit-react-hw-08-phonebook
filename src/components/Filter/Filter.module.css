@@ -1,10 +1,22 @@
+.filterForm {
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
 .filterName {
-    font-size: 20px;
+    font-size: 18px;
+    color: #096d79;
+    font-weight: 700;
 }
 
 .filter {
-    display: block;
+    margin-left: 10px;
     margin-top: 10px;
-    margin-bottom: 20px;
     border-radius: 5px;
+    border-color: #096d79;
+}
+
+.filter:focus {
+    outline: solid #00d4ff;
 }

@@ -10,10 +10,10 @@ const Filter = () => {
     dispatch(setFilter(evt.currentTarget.value))
   };
   
-  return <label className={css.filterName} htmlFor='text'>
+  return <div className={css.filterForm}><label className={css.filterName} htmlFor='text'>
       Find contacts by name
       <input autoComplete='off' className={css.filter} type='text' value={filter} name='filter' onChange={changeFilter} />
-    </label>
+    </label></div>
 }
 
 export default Filter;

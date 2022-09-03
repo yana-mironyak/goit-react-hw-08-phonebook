@@ -1,19 +1,30 @@
+.form {
+    display: flex;
+    padding: 20px;
+}
+
 .contact {
     display: block;
-    margin-bottom: 20px;
+    margin-left: 20px;
     font-size: 20px;
 }
 
 .contactInput {
     display: block;
-    margin-top: 10px;
     border-radius: 5px;
+    border-color: #096d79;
+}
+
+.contactInput:focus {
+    outline: solid #00d4ff;
 }
 
 .contactButton {
     display: block;
+    margin-left: 15px;
     border-radius: 5px;
     border-color: rgb(233, 227, 227);
+    background-color: #00d4ff;
     text-transform: capitalize;
     transition: background-color 100ms;
 }

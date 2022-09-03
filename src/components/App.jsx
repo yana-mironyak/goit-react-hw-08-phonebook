@@ -1,17 +1,42 @@
 import css from './App.module.css';
-import ContactsForm from "./ContactsForm/ContactsForm";
-import ContactsList from "components/ContactsList/ContactsList";
-import Filter from 'components/Filter/Filter';
+import RegisterView from '../views/RegisterView';
+import LoginView from 'views/LoginView';
+import { Routes, Route } from 'react-router-dom';
+import SharedLayout from './SharedLayout/SharedLayout';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import authOperations from '../redux/auth/authOperations'; 
+import ContactsView from 'views/ContactsView';
+import PrivateRoute from './UserMenu/PrivateRoute';
+import PublicRoute from './UserMenu/PublicRoute';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser())
+  }, [dispatch]);
+
   return (
-    <div className={css.container}>
-      <h1 className={css.mainTitle}>Phonebook</h1>
-      <ContactsForm />
-      <h2 className={css.title}>Contacts</h2>
-      <Filter />
-      <ContactsList />
-    </div>
+    <Routes>
+      <Route className={css.container} path='/' element={<SharedLayout />}>
+        <Route index element={
+          <PrivateRoute path='login' >
+            <ContactsView />
+          </PrivateRoute>
+         } />
+        <Route path='login' element={
+          <PublicRoute path='/' >
+            <LoginView />
+          </PublicRoute>
+         } />
+        <Route path='register' element={
+          <PublicRoute path='/' >
+            <RegisterView />
+          </PublicRoute>
+         } />
+      </Route>
+    </Routes>
   )
 }
 

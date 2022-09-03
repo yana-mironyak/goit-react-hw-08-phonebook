@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    background: linear-gradient(83deg, rgba(2, 0, 36, 1) 0%, rgba(9, 109, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.header__nav {
+    color: white;
+    font-size: 18px;
+    line-height: 1.2;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+.header__nav:hover,
+.header__nav:focus {
+    transform: scale(1.1);
+
+}
