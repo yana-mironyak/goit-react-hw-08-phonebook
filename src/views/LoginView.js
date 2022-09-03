@@ -51,11 +51,12 @@ const LoginView = () => {
                     size="small"
                     label="Password"
                     variant="standard"
-                    error={!!errors?.Password}
-                    helperText={errors?.Password ? errors?.Password?.message : null}
+                    error={!!errors?.password}
+                    helperText={errors?.password ? errors?.password?.message : null}
                     {...register("password", { required: 'This is required', minLength: { value: 7, message: 'Min length is 7' } })}
                     type='password'
-                    placeholder="Password" onChange={handleChange} />
+                    // placeholder="Password"
+                    onChange={handleChange} />
                 <Button
                     className={css.form__button}
                     type='submit'
