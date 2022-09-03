@@ -1,14 +1,16 @@
+import React from 'react';
 import css from './App.module.css';
-import RegisterView from '../views/RegisterView';
-import LoginView from 'views/LoginView';
 import { Routes, Route } from 'react-router-dom';
-import SharedLayout from './SharedLayout/SharedLayout';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { lazy } from 'react';
+import SharedLayout from './SharedLayout/SharedLayout';
 import authOperations from '../redux/auth/authOperations'; 
-import ContactsView from 'views/ContactsView';
 import PrivateRoute from './UserMenu/PrivateRoute';
 import PublicRoute from './UserMenu/PublicRoute';
+const RegisterView = lazy(() => import('../views/RegisterView'));
+const LoginView = lazy(() => import('views/LoginView'));
+const ContactsView = lazy(() => import('views/ContactsView'));
 
 const App = () => {
   const dispatch = useDispatch();

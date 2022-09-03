@@ -6,6 +6,7 @@ export default function PublicRoute({ children, path }) {
     const token = useSelector(authSelectors.getToken);
 
     return (
-       !token ? children : <Navigate to={path} />
+        
+        !token ? children : <Navigate to={path} />
     )
 }
